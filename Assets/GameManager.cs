@@ -2,23 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public int score;
-    public Text ScoreText;
-    public Text ScoreText2;
-    public Text HighScore;
+    public TMP_Text ScoreText;
+    public TMP_Text ScoreText2;
+    public TMP_Text HighScore;
     public GameObject hell0;
     public GameObject hell1;
     public GameObject hell2;
     public GameObject hell3;
+    public Move move;
+    
     // Start is called before the first frame update
     void Start()
     {
+
         score=0;
         HighScore.text = PlayerPrefs.GetInt("HighScore",0).ToString();
 
+       
 
     }
 
@@ -33,6 +38,11 @@ public class GameManager : MonoBehaviour
         score++;
         ScoreText.text = score.ToString();
         ScoreText2.text = score.ToString();
+
+        if(score==5 || score==10 || score==15|| score==20 || score==25 || score==30|| score==40 || score==50 || score==60 || score==70 || score==80 || score==90 || score==120 || score==150)
+        {
+            move.PotaHizlandirici();
+        }
 
         StartCoroutine(ArkaPlan());
 

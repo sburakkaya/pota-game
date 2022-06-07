@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public float speed;
-   
+    public float speed=1f;
 
     // Start is called before the first frame update
     void Start()
     {
-         //player = FindObjectOfType<Player>();
+
     }
 
     // Update is called once per frame
@@ -18,12 +17,17 @@ public class Move : MonoBehaviour
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
 
-        //Destroy(gameObject)
+     
     }
 
     public void PotaDurum()
     {
         Debug.Log("Pota Yokedildi");
-        Object.Destroy(gameObject,0.2f);
+        Object.Destroy(gameObject,0.1f);
+    }
+
+    public void PotaHizlandirici()
+    {
+        speed+=speed/15;
     }
 }

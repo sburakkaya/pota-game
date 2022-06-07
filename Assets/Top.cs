@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 
 public class Top : MonoBehaviour
@@ -18,6 +20,9 @@ public class Top : MonoBehaviour
     public GameObject dethScreen;
     public GameObject Terso;
     public Sprite sp1,sp2,sp3;
+
+    public GameObject BaslaticiDokunus;
+
     //public Text uiScore;
     bool didFlap = false;
     // Start is called before the first frame update
@@ -26,8 +31,10 @@ public class Top : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 0;
+        BaslaticiDokunus.SetActive(true);
     }
+
 
     // Update is called once per frame
     void Update()
@@ -36,6 +43,7 @@ public class Top : MonoBehaviour
         if (!gameOver) {
             if (Input.GetMouseButtonDown (0))
                 didFlap = true;
+                
         }
 
         if(managerGame.score == 5)
@@ -81,16 +89,6 @@ public class Top : MonoBehaviour
     }
 
 
-   /* private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag=="Terso")
-        {
-           Debug.Log("Ters Giriş");
-            Time.timeScale = 0;
-            dethScreen.SetActive(true);
-            
-        }
-    }*/
 
     public void UpdateDurum()
     {

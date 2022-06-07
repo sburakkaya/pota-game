@@ -25,5 +25,13 @@ public class YanmaBolgesi : MonoBehaviour
             top.UpdateDurum();
             
         }
+
+        if(collision.gameObject.tag=="Player")
+        {
+            Debug.Log("Hey");
+            top.UpdateDurum();
+            
+        }
+
     }
 }

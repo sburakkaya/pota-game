@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
         while(!TopScript.gameOver)
         {
             
-            Instantiate(Potalar,new Vector3(Top.transform.position.x+10f,Random.Range(-height,height),0),Quaternion.identity);
+            Instantiate(Potalar,new Vector3(Top.transform.position.x+10f,Random.Range(-height,height),0),Quaternion.Euler(0, 0, Random.Range(0, 30)));
 
         
             yield return new WaitForSeconds(2.5f);

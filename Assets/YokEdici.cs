@@ -32,4 +32,6 @@ public class YokEdici : MonoBehaviour
 
         }
     }
+
+    
 }
