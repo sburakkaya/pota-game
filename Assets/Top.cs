@@ -19,9 +19,12 @@ public class Top : MonoBehaviour
     public float maxSpeed;
     public GameObject dethScreen;
     public GameObject Terso;
-    public Sprite sp1,sp2,sp3;
+    public Sprite sp1,sp2,sp3,sp4,sp5,sp6,sp7,sp8;
 
     public GameObject BaslaticiDokunus;
+    public GameObject Patlama;
+
+    public GameObject PauseButon;
 
     //public Text uiScore;
     bool didFlap = false;
@@ -58,6 +61,26 @@ public class Top : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = sp3;
         }
+        if(managerGame.score == 20)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp4;
+        }
+        if(managerGame.score == 25)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp5;
+        }
+        if(managerGame.score == 30)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp6;
+        }
+        if(managerGame.score == 35)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp7;
+        }
+        if(managerGame.score == 40)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp8;
+        }
 
     }
 
@@ -85,7 +108,17 @@ public class Top : MonoBehaviour
             dethScreen.SetActive(true);
             
         }
+
            
+    }
+
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+         if(other.gameObject.tag=="Patlama")
+        {           
+            Instantiate(Patlama,transform.position,Quaternion.identity);
+            
+        }
     }
 
 
@@ -95,6 +128,7 @@ public class Top : MonoBehaviour
         gameOver = true;
         Time.timeScale = 0;
         dethScreen.SetActive(true);
+        PauseButon.SetActive(false);
     }
 
     
