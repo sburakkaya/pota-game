@@ -28,6 +28,6 @@ public class Move : MonoBehaviour
 
     public void PotaHizlandirici()
     {
-        speed+=speed/5;
+        speed+=speed/9;
     }
 }

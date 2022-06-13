@@ -18,13 +18,13 @@ public class Top : MonoBehaviour
     public float jumpForce;
     public float maxSpeed;
     public GameObject dethScreen;
-    public GameObject Terso;
     public Sprite sp1,sp2,sp3,sp4,sp5,sp6,sp7,sp8;
 
-    public GameObject BaslaticiDokunus;
+   
     public GameObject Patlama;
 
     public GameObject PauseButon;
+    
 
     //public Text uiScore;
     bool didFlap = false;
@@ -34,8 +34,7 @@ public class Top : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 0;
-        BaslaticiDokunus.SetActive(true);
+        
     }
 
 
@@ -49,35 +48,35 @@ public class Top : MonoBehaviour
                 
         }
 
-        if(managerGame.score == 5)
+        if(managerGame.score == 5 || managerGame.score == 45)
         {
             GetComponent<SpriteRenderer>().sprite = sp1;
         }
-        if(managerGame.score == 10)
+        if(managerGame.score == 10 || managerGame.score == 50)
         {
             GetComponent<SpriteRenderer>().sprite = sp2;
         }
-        if(managerGame.score == 15)
+        if(managerGame.score == 15 || managerGame.score == 55)
         {
             GetComponent<SpriteRenderer>().sprite = sp3;
         }
-        if(managerGame.score == 20)
+        if(managerGame.score == 20 || managerGame.score == 60)
         {
             GetComponent<SpriteRenderer>().sprite = sp4;
         }
-        if(managerGame.score == 25)
+        if(managerGame.score == 25 || managerGame.score == 65)
         {
             GetComponent<SpriteRenderer>().sprite = sp5;
         }
-        if(managerGame.score == 30)
+        if(managerGame.score == 30 || managerGame.score == 70)
         {
             GetComponent<SpriteRenderer>().sprite = sp6;
         }
-        if(managerGame.score == 35)
+        if(managerGame.score == 35 || managerGame.score == 75)
         {
             GetComponent<SpriteRenderer>().sprite = sp7;
         }
-        if(managerGame.score == 40)
+        if(managerGame.score == 40 || managerGame.score == 80)
         {
             GetComponent<SpriteRenderer>().sprite = sp8;
         }
@@ -105,8 +104,8 @@ public class Top : MonoBehaviour
 
         if(collision.gameObject.tag == "Terso")
         {
-            dethScreen.SetActive(true);
-            
+            managerGame.UpdateScore();
+
         }
 
            
@@ -117,20 +116,16 @@ public class Top : MonoBehaviour
          if(other.gameObject.tag=="Patlama")
         {           
             Instantiate(Patlama,transform.position,Quaternion.identity);
-            
+            managerGame.UpdateDurum();
+
+            Destroy(gameObject);
         }
     }
 
 
 
-    public void UpdateDurum()
-    {
-        gameOver = true;
-        Time.timeScale = 0;
-        dethScreen.SetActive(true);
-        PauseButon.SetActive(false);
-    }
 
     
+  
     
 }

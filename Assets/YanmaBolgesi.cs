@@ -5,7 +5,7 @@ using UnityEngine;
 public class YanmaBolgesi : MonoBehaviour
 {
     public Top top;
-   
+    public GameManager managerGame;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,15 +23,15 @@ public class YanmaBolgesi : MonoBehaviour
         if(collision.gameObject.tag=="YanmaBolgesi")
         {
             Debug.Log("Hey");
-            top.UpdateDurum();
+            managerGame.UpdateDurum();
             
         }
 
         if(collision.gameObject.tag=="Player")
         {           
             Debug.Log("Hey");
-            top.UpdateDurum();
-            
+            managerGame.UpdateDurum();
+
         }
 
     }

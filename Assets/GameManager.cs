@@ -14,16 +14,26 @@ public class GameManager : MonoBehaviour
     public Move move;
     public Move move2;
     public Move move3;
+    public MeteorMove move4;
+    public GameObject BaslaticiDokunus;
+    public bool gameOver = false;
+    public GameObject dethScreen;
+    public GameObject PauseButon;
+    public GameObject Player;
+    public GameObject reklamScript;
 
-    
+
+
+
     // Start is called before the first frame update
     void Start()
     {
 
-        score=0;
-        HighScore.text = PlayerPrefs.GetInt("HighScore",0).ToString();
+        Time.timeScale = 0;
+        BaslaticiDokunus.SetActive(true);
 
-       
+        score =0;
+        HighScore.text = PlayerPrefs.GetInt("HighScore",0).ToString();
 
     }
 
@@ -32,6 +42,24 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void UpdateDurum()
+    {
+        gameOver = true;
+
+        StartCoroutine(ReklamGöster());
+
+        dethScreen.SetActive(true);
+        PauseButon.SetActive(false);
+        
+    }
+
+    IEnumerator ReklamGöster() 
+    {
+        yield return new WaitForSeconds(2f);
+        reklamScript.GetComponent<ReklamScript>().GameOver();
+    }
+
 
     public void UpdateScore()
     {
@@ -44,6 +72,7 @@ public class GameManager : MonoBehaviour
             move.PotaHizlandirici();
             move2.PotaHizlandirici();
             move3.PotaHizlandirici();
+            move4.MeteorHizlandirici();
         }
 
         StartCoroutine(ArkaPlan());
@@ -59,7 +88,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator ArkaPlan()
     {
-        if(score == 5)
+        if(score == 5 || score == 45)
         {
             hell8.SetActive(false);
             hell0.SetActive(false);
@@ -74,7 +103,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             hell1.SetActive(true);
         }
-        if(score == 10 )
+        if(score == 10 || score == 50)
         {
             hell1.SetActive(false);
             yield return new WaitForSeconds(0.1f);
@@ -88,7 +117,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             hell2.SetActive(true);
         }
-        if(score == 15 )
+        if(score == 15 || score == 55)
         {
             hell2.SetActive(false);
             yield return new WaitForSeconds(0.1f);
@@ -102,7 +131,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             hell3.SetActive(true);
         }
-        if(score == 20 )
+        if(score == 20 || score == 60)
         {
             hell3.SetActive(false);
             yield return new WaitForSeconds(0.1f);
@@ -116,21 +145,8 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             hell4.SetActive(true);
         }
-        if(score == 20 )
-        {
-            hell3.SetActive(false);
-            yield return new WaitForSeconds(0.1f);
-            hell4.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
-            hell4.SetActive(false);
-            yield return new WaitForSeconds(0.1f);
-            hell3.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
-            hell3.SetActive(false);
-            yield return new WaitForSeconds(0.1f);
-            hell4.SetActive(true);
-        }
-        if(score == 25 )
+        
+        if(score == 25 || score == 65)
         {
             hell4.SetActive(false);
             yield return new WaitForSeconds(0.1f);
@@ -144,7 +160,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             hell5.SetActive(true);
         }
-        if(score == 30 )
+        if(score == 30 || score == 70)
         {
             hell5.SetActive(false);
             yield return new WaitForSeconds(0.1f);
@@ -158,7 +174,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             hell6.SetActive(true);
         }
-        if(score == 35 )
+        if(score == 35 || score == 75)
         {
             hell6.SetActive(false);
             yield return new WaitForSeconds(0.1f);
@@ -172,7 +188,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             hell7.SetActive(true);
         }
-        if(score == 40 )
+        if(score == 40 || score == 80)
         {
             hell7.SetActive(false);
             yield return new WaitForSeconds(0.1f);
