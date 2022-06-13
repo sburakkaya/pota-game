@@ -24,7 +24,8 @@ public class YanmaBolgesi : MonoBehaviour
         {
             Debug.Log("Hey");
             managerGame.UpdateDurum();
-            
+            top.TopYokEt();
+
         }
 
         if(collision.gameObject.tag=="Player")

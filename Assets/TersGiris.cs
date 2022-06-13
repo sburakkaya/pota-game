@@ -23,7 +23,7 @@ public class TersGiris : MonoBehaviour
         if (other.gameObject.tag == "Player") {
             Debug.Log("Ters Giriş");
             Instantiate(Terso,transform.position,Quaternion.identity);
-            Time.timeScale = 0;
+            
             
 
         }

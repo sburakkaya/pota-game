@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public Move move2;
     public Move move3;
     public MeteorMove move4;
-    public GameObject BaslaticiDokunus;
+    
     public bool gameOver = false;
     public GameObject dethScreen;
     public GameObject PauseButon;
@@ -29,8 +29,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        Time.timeScale = 0;
-        BaslaticiDokunus.SetActive(true);
+        
 
         score =0;
         HighScore.text = PlayerPrefs.GetInt("HighScore",0).ToString();

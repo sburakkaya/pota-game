@@ -909,7 +909,6 @@ MonoBehaviour:
   move2: {fileID: 2007064663}
   move3: {fileID: 701611101}
   move4: {fileID: 77341951}
-  BaslaticiDokunus: {fileID: 344972243}
   gameOver: 0
   dethScreen: {fileID: 2043051519}
   PauseButon: {fileID: 739271054}
@@ -1859,7 +1858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   top: {fileID: 1665027817}
-  managerGame: {fileID: 0}
+  managerGame: {fileID: 291860367}
 --- !u!1 &590932343
 GameObject:
   m_ObjectHideFlags: 0
@@ -3209,7 +3208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   top: {fileID: 1665027817}
-  managerGame: {fileID: 0}
+  managerGame: {fileID: 291860367}
 --- !u!50 &1393629824
 Rigidbody2D:
   serializedVersion: 4
@@ -3852,6 +3851,7 @@ MonoBehaviour:
   sp6: {fileID: 21300000, guid: 165862bf8f08ed54f9c254bf6c53e719, type: 3}
   sp7: {fileID: 21300000, guid: 523a5766d2ead0547b88a8cdf747d420, type: 3}
   sp8: {fileID: 21300000, guid: 6c31f983aacf5a34faeba4d46c101924, type: 3}
+  BaslaticiDokunus: {fileID: 344972243}
   Patlama: {fileID: 4042340103626996959, guid: 6f5f1e4b2e9c04146b69cf50578863c9, type: 3}
   PauseButon: {fileID: 916412839}
 --- !u!95 &1665027818
@@ -4263,7 +4263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   top: {fileID: 1665027817}
-  managerGame: {fileID: 0}
+  managerGame: {fileID: 291860367}
 --- !u!50 &1849764024
 Rigidbody2D:
   serializedVersion: 4

@@ -19,8 +19,8 @@ public class Top : MonoBehaviour
     public float maxSpeed;
     public GameObject dethScreen;
     public Sprite sp1,sp2,sp3,sp4,sp5,sp6,sp7,sp8;
+    public GameObject BaslaticiDokunus;
 
-   
     public GameObject Patlama;
 
     public GameObject PauseButon;
@@ -34,7 +34,8 @@ public class Top : MonoBehaviour
 
     void Start()
     {
-        
+        Time.timeScale = 0;
+        BaslaticiDokunus.SetActive(true);
     }
 
 
@@ -100,11 +101,13 @@ public class Top : MonoBehaviour
         if(collision.gameObject.name == "ScoreArea")
         {
             managerGame.UpdateScore();
+
         }
 
         if(collision.gameObject.tag == "Terso")
         {
-            managerGame.UpdateScore();
+            managerGame.UpdateDurum();
+
 
         }
 
@@ -120,6 +123,11 @@ public class Top : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    public void TopYokEt() 
+    {
+        Destroy(gameObject,0.2f);
     }
 
 
